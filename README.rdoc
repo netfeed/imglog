@@ -2,6 +2,8 @@
 
 imglog is a image logging site for IRC-channels. Direct linked images is pulled down with help from a Cinch[http://www.cinchrb.org] IRC-bot. See cinch-imglog for examples on how to run the bot.
 
+A running example can be found at http://www.coxify.com
+
 == Requirements
 
 * Ruby >= 1.9.1
@@ -39,6 +41,8 @@ Edit the default config files. Note: the path to the database should be as expli
   database: postgres://username:password@host/database
   
 Also, make sure to use the same handshake in both the bot and in the site.
+
+If you want to get the site to be index by Google et al. then you'll have to change the settings in public/robots.txt, it's turned off by default.
 
 When that's done:
 
