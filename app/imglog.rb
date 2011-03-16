@@ -37,7 +37,10 @@ module ImgLog
   end
 end
 
-require 'models'
+require 'models/helpers/timestamps'
+
+require 'models/small'
+require 'models/image'
 
 require 'routes/index'
 require 'routes/image'

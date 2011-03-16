@@ -1,5 +1,3 @@
-require 'models/helpers/timestamps'
-
 module ImgLog
   class Channel < Sequel::Model
     plugin :validation_helpers
@@ -29,5 +27,3 @@ module ImgLog
   class StaticDay < Sequel::Model
   end
 end
-
-require 'models/image'
