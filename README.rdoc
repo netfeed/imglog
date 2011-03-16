@@ -1,0 +1,55 @@
+= imglog
+
+imglog is a image logging site for IRC-channels. Direct linked images is pulled down with help from a Cinch[http://www.cinchrb.org] IRC-bot. See cinch-imglog for examples on how to run the bot.
+
+== Requirements
+
+* Ruby >= 1.9.1
+* Some sort of SQL-server that Sequel[https://github.com/jeremyevans/sequel] can talk to. imglog is tested with PostgreSQL and Sqlite3
+* The default webserver[http://unicorn.bogomips.org/] is unicorn through nginx
+
+imglog + bot runs fine on a slice with 512 mb ram.
+
+== Installation
+
+I would suggest that you run the code inside rvm, but that's up to the you.
+
+Check out the code with:
+
+  git clone path..
+  
+Then in the new dir run:
+
+  bundle install --without development
+  
+Note: Production installs by the 'pg' gem for PostgreSQL by default and development installs the 'sqlite3' gem.
+
+After that run either, depending on database, should work with whatever Sequel supports:
+
+  sequel -m migration/ sqlite://db.db
+  sequel -m migration/ postgres://username:password@host/database
+
+After that you'll need to at least add a network(inside the database UI):
+
+  INSERT INTO networks(name, slug, address, port) VALUES ('freenode', 'freenode', 'irc.freenode.net', 6667);
+
+Edit the default config files. Note: the path to the database should be as explicit as possible, ie:
+
+  database: sqlite:///home/user/path/to/db.db
+  database: postgres://username:password@host/database
+  
+Also, make sure to use the same handshake in both the bot and in the site.
+
+When that's done:
+
+  unicorn -c unicorn.rb -E production  -l 127.0.0.1:5001 -D
+  
+And then start nginx, see examples/nginx.conf for example config file.
+
+== Notice
+
+Neither the creators of ImgLog nor Cinch takes any responsibility about how this plugin/site is used.
+
+== Copyright
+
+Copyright (c) 2011 Victor Bergöö. See LICENSE for details.

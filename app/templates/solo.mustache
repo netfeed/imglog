@@ -1,0 +1,38 @@
+<div id="image">
+  <div class="toprow">
+    <div class="previous">
+      {{#previous}}
+        <a href="{{url}}">&lt;&lt; previous</a>
+      {{/previous}}
+    </div>
+
+    <div class="middle">
+      {{#middle}}
+        <a href="{{date_path}}">{{pretty_date}}</a>
+      {{/middle}}
+    </div>
+
+    <div class="next">
+      {{#next}}
+        <a href="{{url}}">next &gt;&gt;</a>
+      {{/next}}
+    </div>
+  </div>
+
+  <div id="pic">
+    {{#image}}
+      <a href="{{image}}" rel="shadowbox"><img src="{{medium}}"/></a>
+    {{/image}}
+  </div>
+  
+  {{#has_thumbs}}
+    <div id="thumbs">
+      <h2><a href="{{date_path}}">Other images for {{date}}</a></h2>
+      <div class="row">
+        {{#thumbs}}
+          <div class="thumbnail"><a href="{{url}}"><img src="{{thumbnail}}"/></a></div>
+        {{/thumbs}}
+      </div>
+    </div>
+  {{/has_thumbs}}
+</div>

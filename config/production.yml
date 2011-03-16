@@ -1,0 +1,7 @@
+site:
+  image_domain: 
+  sitename: ImgLog
+  tagline: Logging for life
+  database: 
+  google_analytics: 
+  handshake:

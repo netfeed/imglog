@@ -1,0 +1,15 @@
+{{#images}}
+  <div class="index-day">
+    <h2><a href="{{date_path}}">{{date}} ({{amount}} images)</a></h2>
+    {{#thumbs}}
+      <div class="row">
+        {{#row}}
+          <div class="thumbnail"><a href="{{url}}"><img src="{{thumbnail}}"/></a></div>
+        {{/row}}
+      </div>  
+    {{/thumbs}}
+    {{#has_more}}
+      <h3 class="more"><a href="{{date_path}}">See all {{amount}} images</a></h3>
+    {{/has_more}}
+  </div>
+{{/images}}
