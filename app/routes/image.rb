@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2011 Victor Bergöö
+# This program is made available under the terms of the MIT License.
+
 module ImgLog
   class Site
     get %r{/image/(\d{4})/(\d{2})/(\d{2})/(\d+)/?} do |year, month, day, id|
