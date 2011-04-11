@@ -7,6 +7,15 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
+    <meta name="title" content="{{name}}" />
+    <meta name="description" content="{{name}} - {{tagline}}"/>
+    
+    {{#opengraph}}
+      <meta property="og:image" content="{{image}}" />
+      <meta property="og:title" content="{{title}}" />
+      <meta property="og:url" content="{{url}}" />
+    {{/opengraph}}
+    
     {{#shadow}}
       <script type="text/javascript" src="/js/shadowbox.js"></script>
       <script type="text/javascript">

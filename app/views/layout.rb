@@ -29,6 +29,10 @@ module ImgLog
         def shadow
           nil
         end
+        
+        def opengraph
+          nil
+        end
       end
     end
   end

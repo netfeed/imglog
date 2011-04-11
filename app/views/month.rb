@@ -67,6 +67,16 @@ module ImgLog
           { :url => "/image/#{date}?page=#{@next}" }
         end
         
+        def opengraph
+          date = @days.sort{ |a, b| a.date <=> a.date }.first.date
+          image = Image.by_date(date).sort{ |a, b| a.created_time <=> b.created_time}.reverse.first
+          {
+            :title => name,
+            :url => [settings.site_domain, 'image', image.created_date.strftime('%Y/%m')].join('/'),
+            :image => image.thumbnail
+          }
+        end
+        
         private
         
         def comming_month dataset

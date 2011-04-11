@@ -50,6 +50,14 @@ module ImgLog
         def shadow
           true
         end
+        
+        def opengraph
+          {
+            :title => name,
+            :url => [settings.site_domain, 'image', image.created_date.strftime('%Y/%m/%d'), image.id].join('/'),
+            :image => image.thumbnail
+          }
+        end
       end
     end
   end

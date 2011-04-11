@@ -16,7 +16,7 @@ config['site'].each_pair do |key, value|
   set key.to_sym, value
 end
 
-%w(database image_domain sitename handshake).each do |key|
+%w(database image_domain sitename handshake site_domain).each do |key|
   raise ArgumentError.new "#{key} is not set, please set it" unless settings.respond_to? key.to_sym
 end
 

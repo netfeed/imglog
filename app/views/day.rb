@@ -54,6 +54,15 @@ module ImgLog
             :date_path => ['/image', next_image.created_date.strftime('%Y/%m/%d')].join('/')
           }
         end
+        
+        def opengraph
+          image = @images.sort{ |a, b| a.created_time <=> b.created_time }.reverse.first
+          {
+            :title => name,
+            :url => [settings.site_domain, 'image', image.created_date.strftime('%Y/%m/%d')].join('/'),
+            :image => image.thumbnail
+          }
+        end
       end
     end
   end
