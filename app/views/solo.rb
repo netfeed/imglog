@@ -35,12 +35,12 @@ module ImgLog
         
         def previous 
           md5 = image.md5
-          Image.filter(:id.identifier < image.id, :active => true).filter{(~{:md5 => md5})}.order(:id.desc).limit(1).first
+          Image.filter(:id.identifier > image.id, :active => true).filter{(~{:md5 => md5})}.order(:id.asc).limit(1).first
         end
         
         def next
           md5 = image.md5
-          Image.filter(:id.identifier > image.id, :active => true).filter{(~{:md5 => md5})}.order(:id.asc).limit(1).first
+          Image.filter(:id.identifier < image.id, :active => true).filter{(~{:md5 => md5})}.order(:id.desc).limit(1).first
         end
         
         def has_thumbs
