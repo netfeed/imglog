@@ -1,3 +1,5 @@
+= This version has been decommissioned in favor of this[https://github.com/netfeed/coxify] version
+
 = imglog
 
 imglog is a image logging site for IRC-channels. Direct linked images is pulled down with help from a Cinch[http://www.cinchrb.org] IRC-bot. See cinch-imglog for examples on how to run the bot.
